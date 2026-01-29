@@ -1,9 +1,11 @@
 import pygame as pg
-import settings as S
 
+import settings as S
 from app_init import init_app, poll_quit, shutdown_app
-from game import init_game, tick_game, render_game
 from commands import process_commands
+from game import init_game, tick_game
+from render import render
+
 
 def main():
     screen, clock, font = init_app()
@@ -21,7 +23,7 @@ def main():
 
         tick_game(reg, state, dt)
         process_commands(reg, state)
-        render_game(screen, reg, state, font)
+        render(screen, reg, state, font)
         pg.display.flip()
 
     shutdown_app()
