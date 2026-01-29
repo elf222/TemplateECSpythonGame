@@ -1,9 +1,11 @@
+#main.py
 import pygame as pg
 
 import settings as S
 from app_init import init_app, poll_quit, shutdown_app
 from commands import process_commands
-from game import init_game, tick_game
+from game import tick_game
+from initalisation import init_game
 from render import render
 
 
