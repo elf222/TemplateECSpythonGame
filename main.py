@@ -1,4 +1,5 @@
-#main.py
+import asyncio
+
 import pygame as pg
 
 import settings as S
@@ -9,7 +10,7 @@ from initalisation import init_game
 from render import render
 
 
-def main():
+async def main():
     screen, clock, font = init_app()
     reg, state = init_game()
 
@@ -26,9 +27,13 @@ def main():
         tick_game(reg, state, dt)
         process_commands(reg, state)
         render(screen, reg, state, font)
+
         pg.display.flip()
+
+        await asyncio.sleep(0)
 
     shutdown_app()
 
+
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
