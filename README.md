@@ -1,23 +1,9 @@
-## Setup
+## Run local
 
-### macOS/Linux
-
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install -r requirements.txt
-
-### Windows
-
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -U pip
-pip install -r requirements.txt
-
-## Run
-
-python main.py
+cd PythonPygame2
+python3 main.py
 
 ## Web build
 
-python -m pygbag .
+cd ..
+python3 -m pygbag PythonPygame2
